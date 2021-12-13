@@ -42,17 +42,18 @@ include_directories(
   ${GAZEBO_INCLUDE_DIRS}
 )
 
+add_executable(gazebo_swarm_robot_control src/main.cpp src/swarm_robot_control.cpp include/swarm_robot_control.h)
+target_link_libraries(gazebo_swarm_robot_control ${catkin_LIBRARIES})
 
-add_executable(gazebo_swarm_robot_control_angle src/gazebo_main_angle.cpp)
+
+add_executable(gazebo_swarm_robot_control_angle src/main_angle.cpp src/swarm_robot_control.cpp include/swarm_robot_control.h)
 target_link_libraries(gazebo_swarm_robot_control_angle ${catkin_LIBRARIES})
 
-add_executable(gazebo_stop_robot src/gazebo_stop_robot.cpp)
+add_executable(gazebo_swarm_robot_control_linear src/main_linear.cpp src/swarm_robot_control.cpp include/swarm_robot_control.h)
+target_link_libraries(gazebo_swarm_robot_control_linear ${catkin_LIBRARIES})
+
+add_executable(gazebo_stop_robot src/stop_robot.cpp src/swarm_robot_control.cpp include/swarm_robot_control.h)
 target_link_libraries(gazebo_stop_robot ${catkin_LIBRARIES})
-
-add_executable(gazebo_turn_robot_example src/gazebo_turn_robot_example.cpp)
-target_link_libraries(gazebo_turn_robot_example ${catkin_LIBRARIES})
-
-
 
 ################################################################################
 # Install
